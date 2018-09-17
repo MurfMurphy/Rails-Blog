@@ -1,0 +1,48 @@
+#newUserContentWrapper{
+    height: 100vh;
+    background-color: #4a4a86;
+    display: grid;
+    grid-template-columns: 5;
+    grid-template-rows: 5;
+}
+
+#newUserForm{
+    border: 3px solid #05052a;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 350px;
+    height: 500px;
+    background-color: #21215d;
+    color: #dedeec;
+    box-shadow: 0 0 5px #21215d;
+}
+
+#newUserHead{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+}
+.signUpLabel{
+    font-size: 25px;
+    padding: 0px 0px 5px 10px;
+}
+.signUpHelp{
+    padding: 0px 0px 5px 10px;
+}
+.signUpInput{
+    margin: 5px 0px 5px 10px
+}
+.signUpSubmit{
+    margin: 10px 0px 0px 10px;
+    width: 100px;
+}
+#linkToSignIn{
+    padding-top: 5px;
+    text-align: center;
+}
+#signInLink a:visited{
+    color: white;
+}
+#signInLink a:link{
+    color: white;
+}

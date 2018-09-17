@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=@title%></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="flashNotice" class="flash"><%= flash[:notice] if flash[:notice]%></div>
+    <div id="flashFailure" class="flash"><%= flash[:failure] if flash[:failure]%></div>
+    <div id="flashSuccess" class="flash"><%= flash[:success] if flash[:success]%></div>
+    <%= yield %>
+  </body>
+</html>

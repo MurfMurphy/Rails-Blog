@@ -1,0 +1,9 @@
+<div id="usersManifestContent">
+
+    <% @user.each do |user| %>
+    <h2 class="userManifest">Username:<%= user.username%></h2>
+    <h2 class="userManifest">First Name:<%= user.fname%></h2>
+    <h2 class="userManifest">Last Name:<%= user.lname%></h2>
+    <% end %>
+
+</div>

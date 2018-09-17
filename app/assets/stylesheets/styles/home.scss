@@ -1,0 +1,29 @@
+#homeContent{
+    height: 100%;
+    background-color: #4a4a86;
+    display: grid;
+    grid-template-columns: 10;
+    grid-template-rows: 10;
+}
+#homePostWrapper{
+    // grid-column-start: 2;
+    // grid-column-end: 7;
+    // grid-row-start: 4;
+}
+#postDisplay{
+    border: 3px solid #05052a;
+    background-color: #21215d;
+    color: #dedeec;
+    box-shadow: 0 0 5px #21215d;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    padding: 20px;
+    margin: 30px;
+}
+#postUserLink a:link{
+    color: white;
+}
+#postUserLink a:visited{
+    color: white;
+}

@@ -1,0 +1,48 @@
+#signInContent{
+    height: 100vh;
+    background-color: #4a4a86;
+    display: grid;
+    grid-template-columns: 5;
+    grid-template-rows: 5;
+}
+
+#signInForm{
+    border: 3px solid #05052a;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 300px;
+    height: 300px;
+    background-color: #21215d;
+    color: #dedeec;
+    box-shadow: 0 0 5px #21215d;
+}
+#signInHead{
+    font-size: 30px;
+    text-align: center;
+    padding: 15px 0px 5px 0px;
+}
+.signInLabel{
+    display: inline-block;
+    font-size: 25px;
+    padding: 15px;
+    text-align: center;
+}
+.signInInput{
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 5px 5px 0px;
+}
+.signInSubmit{
+    display: inline-block;
+    margin: 14px 0px 0px 10px;
+}
+#linkToSignUp{
+    padding-top: 5px;
+    text-align: center;
+}
+#signUpLink a:visited{
+    color: white;
+}
+#signUpLink a:link{
+    color: white;
+}

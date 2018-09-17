@@ -1,0 +1,26 @@
+<div id="newUserContentWrapper">
+
+    <div id="newUserForm">
+        <h1 id="newUserHead"> Sign-Up </h1>
+
+        <%= form_for @user do |f| %>
+            <%= f.label :username, "Username", class: "signUpLabel"%><br>
+            <%= f.text_field :username, class:"signUpInput"%><br>
+            <span class="signUpHelp">Username must be shorter than 14 characters.</span><br>
+            <%= f.label :fname, "First Name", class: "signUpLabel"%><br>
+            <%= f.text_field :fname, class:"signUpInput"%><br>
+            <%= f.label :lname, "Last Name", class: "signUpLabel"%><br>
+            <%= f.text_field :lname, class:"signUpInput"%><br>
+            <%= f.label :email, "E-Mail", class: "signUpLabel"%><br>
+            <%= f.text_field :email, class:"signUpInput"%><br>
+            <%= f.label :password, "Password", class: "signUpLabel"%><br>
+            <%= f.password_field :password, class:"signUpInput"%><br>
+            <span class="signUpHelp"> Password must be longer than 6 characters.</span><br>
+            <%= f.label :password_confirm, "Confirm Password", class: "signUpLabel"%><br>
+            <%= f.password_field :password_confirm, class:"signUpInput"%><br>
+            <%= f.submit "Create User", class: "signUpSubmit"%>
+        <% end %>
+        <div id="linkToSignIn">Already have an account? <div id="signInLink"><%= link_to('Sign In', new_session_path)%></div></div>
+
+    </div>
+</div>

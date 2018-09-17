@@ -1,0 +1,35 @@
+.flash{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    box-shadow: 0 0 5px black;
+    animation: slideup 4s;
+    animation-fill-mode: forwards;
+    // background-color: rgba(128, 128, 128, 0.76);
+}
+#flashSuccess{
+    background-color: rgba(0, 128, 0, 0.800);
+}
+#flashFailure{
+    background-color: rgba(255, 0, 0, 0.800);
+}
+#flashNotice{
+    background-color: rgba(255, 255, 0, 0.800);
+}
+
+@keyframes slideup {
+    0% {
+        top: 0px;
+    }
+    75% {
+        top: 0px;
+    }
+    100% {
+        top: -45px;
+    }
+}
