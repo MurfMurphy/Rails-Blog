@@ -35,17 +35,38 @@ class UsersController < ApplicationController
             flash[:failure] = "Username must be unique!"
             return redirect_to new_user_path
         end
-        user = User.create(user_params)
-        session[:user_id] = user.id
+        @user = User.new(user_params)
+        if @user.save
+            flash[:success] = "Created user!"
+        else
+            flash[:failure] = "Oops, you summoned an error: "
+            flash[:failure] += @user.errors.full_messages.join(', ')
+            return redirect_to new_user_path
+        end
+        session[:user_id] = @user.id
         flash[:success] = "User Created!"
         redirect_to '/'
     end
 
     def edit
-        @user = User.find(params[:id])
+        @current_user = current_user
+        @user = User.find(@current_user.id)
     end
 
     def update
+        @user = User.find(params[:id])
+        if params[:user][:password_confirm] != @user.password
+            flash[:failure] = "Incorrect Password!"
+            return redirect_to edit_user_path(@user)
+        end
+        if @user.update(params[:user].except(:password, :password_confirm))
+            flash[:success] = "Updated your Profile!"
+            return redirect_to '/profile'
+        else
+            flash[:notice] = "Update failed, here's why: "
+            flash[:notice] += @user.errors.full_messages.join(', ')
+            return redirect_to edit_user_path(@user)
+        end
     end
 
     def destroy

@@ -1,0 +1,13 @@
+<%= form_for @current_user do |f| %>
+    <%= f.label :username, "Username", class: "profileUpdateLabel"%><br>
+    <%= f.text_field :username, class:"profileUpdateInput"%><br>
+    <%= f.label :fname, "First Name", class: "profileUpdateLabel"%><br>
+    <%= f.text_field :fname, class:"profileUpdateInput"%><br>
+    <%= f.label :lname, "Last Name", class: "profileUpdateLabel"%><br>
+    <%= f.text_field :lname, class:"profileUpdateInput"%><br>
+    <%= f.label :email, "E-Mail", class: "profileUpdateLabel"%><br>
+    <%= f.text_field :email, class:"profileUpdateInput"%><br>
+    <%= f.label :password_confirm, "Confirm Password", class: "profileUpdateLabel"%><br>
+    <%= f.password_field :password_confirm, class:"profileUpdateInput"%><br>
+    <%= f.submit "Update Profile", class: "profileUpdateSubmit"%>
+<% end %>

@@ -34,15 +34,19 @@
                 <p><%= post.posted_at%></p>
 
                 <%if current_user && current_user.id == post.user_id%>
-                <span class="postUserLink"><%= link_to(user.username, '/profile', class: "postUserLink")%></span>
+                <span class="postUserLink"><%= link_to(user.username, '/profile')%></span>
                 <% else %>
                 <span class="postUserLink"><%= link_to(user.username, user)%></span>
                 <% end %>
+                <%if @current_user%>
+                    <%= link_to('View/Add Comments', post_path(post.id))%>
+                <%else%>
+                    <h1 id="commentBlurb">Log in to post a comment!</h1>
+                <%end%>
             </div>
 
         <% end %>
 
     </div>
-
 
 </div>

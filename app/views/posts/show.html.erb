@@ -1,0 +1,35 @@
+
+
+    <% user = User.find(@post.user_id)%>
+    <div id="postDisplay">
+        <h1><%= @post.title%></h1>
+        <p><%= @post.body%></p>
+        <p><%= @post.posted_at%></p>
+        <%if @current_user && @current_user.id == @post.user_id%>
+            <span class="postUserLink"><%= link_to(user.username, '/profile')%></span>
+            <% else %>
+            <span class="postUserLink"><%= link_to(user.username, user)%></span>
+            <% end %>      
+
+        <h3><% @post.comments.reverse.each do |c| %> </h3> 
+            <% if c.persisted? %>
+                <div id="comment">
+                    <h3>Comment</h3>
+                    <h3><%= c.body %> </h3>
+                    <h3><%= c.user.username %></h3>
+                </div>
+            <% end %>       
+        <% end %>       
+    </div>
+
+
+
+    <div id="addCommentWrapper">
+        <%= form_for [@post, @comment] do |f|%>
+            <%= f.label "Comment"%>
+            <%= f.text_area :body%>
+            <%= f.hidden_field :post_id %>
+            <%= f.submit%>
+        <% end %>
+    </div>
+

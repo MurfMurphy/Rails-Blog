@@ -6,10 +6,16 @@ class PostsController < ApplicationController
     def index
         @post = Post.all
     end
+    def show
+        login_check
+        @current_user = current_user
+        @post = Post.find(params[:id])
+        @comment = @post.comments.build
+    end
 
     def create
         @user = current_user
-        post = Post.create(user_id: @user.id, title: params[:title], body: params[:body], posted_at: Time.now.strftime("%d/%m/%Y"))
+        post = Post.create(user_id: @user.id, title: params[:title], body: params[:body], posted_at: Time.now.strftime("%d/%m/%Y %H/%M"))
 
         redirect_to '/'
 

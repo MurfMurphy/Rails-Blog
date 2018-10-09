@@ -17,13 +17,12 @@
     box-shadow: 0 0 5px #21215d;
     grid-column-start: 2;
     grid-column-end: 7;
-    grid-row-start: 4;
     padding: 20px;
     margin: 30px;
 }
-#postUserLink a:link{
+.postUserLink a:link{
     color: white;
 }
-#postUserLink a:visited{
+.postUserLink a:visited{
     color: white;
 }
